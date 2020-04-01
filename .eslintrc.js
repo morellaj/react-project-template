@@ -42,19 +42,6 @@ module.exports = {
       alias: {
         map: [
           ['Colors', './src/data/colors.json'],
-          ['Character', './src/data/character.json'],
-          ['Data', './src/data/'],
-          ['Common', './src/components/common/'],
-          ['Footer', './src/components/common/Footer.jsx'],
-          ['Icon', './src/components/common/Icon.jsx'],
-          ['Navbar', './src/components/common/Navbar.jsx'],
-          ['SocialIcon', './src/components/common/SocialIcon.jsx'],
-          ['Error', './src/components/common/Error.jsx'],
-          ['Styles', './src/components/common/Styles.jsx'],
-          ['Head', './src/components/common/Head.jsx'],
-          ['Constants', './src/data/constants.js'],
-          ['Actions', './src/redux/actions.js'],
-          ['Assets', './assets/'],
         ]
       }
     }

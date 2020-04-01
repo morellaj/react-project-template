@@ -3,11 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-// const { GenerateSW } = require('workbox-webpack-plugin');
-// const SentryCliPlugin = require('@sentry/webpack-plugin');
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-
-
 module.exports = {
   entry: './src/index.jsx',
   output: {
@@ -18,19 +13,6 @@ module.exports = {
   resolve: {
     alias: {
       Colors: path.join(__dirname, 'src/data/colors.json'),
-      Character: path.join(__dirname, 'src/data/character.json'),
-      Data: path.join(__dirname, 'src/data/'),
-      Common: path.join(__dirname, 'src/components/common/'),
-      Footer: path.join(__dirname, 'src/components/common/Footer.jsx'),
-      Icon: path.join(__dirname, 'src/components/common/Icon.jsx'),
-      Head: path.join(__dirname, 'src/components/common/Head.jsx'),
-      Navbar: path.join(__dirname, 'src/components/common/Navbar.jsx'),
-      SocialIcon: path.join(__dirname, 'src/components/common/SocialIcon.jsx'),
-      Styles: path.join(__dirname, 'src/components/common/Styles.jsx'),
-      Error: path.join(__dirname, 'src/components/common/Error.jsx'),
-      Constants: path.join(__dirname, 'src/data/constants.js'),
-      Actions: path.join(__dirname, 'src/redux/actions.js'),
-      Assets: path.join(__dirname, 'assets/'),
     },
     extensions: ['.js', '.jsx'],
   },
@@ -75,15 +57,11 @@ module.exports = {
       template: './src/index.html',
       hash: true,
     }),
-    // new GenerateSW(),
     new CopyPlugin([
       { from: 'assets', to: 'assets' },
       { from: '_redirects', to: '_redirects', toType: 'file' },
       { from: 'robots.txt', to: 'robots.txt', toType: 'file' },
-      { from: 'sitemap.xml', to: 'sitemap.xml', toType: 'file' },
-      { from: 'netlify.toml', to: 'netlify.toml', toType: 'file' },
     ]),
     new CleanWebpackPlugin(),
-    // new BundleAnalyzerPlugin(),
   ],
 };
